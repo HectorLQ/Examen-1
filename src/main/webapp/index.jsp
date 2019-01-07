@@ -4,14 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Actors page</title>
+<title>Index page</title>
 </head>
 <body>
-	<form action="/pelicula" method="post">
-		<span>cod:</span> <input type="text" name="cod"> <br />
-		<span>name:</span> <input type="text" name="name"> <br />
-		<span>year:</span> <input type="text" name="year"> <br />
-		<input type="submit">
-	</form>
+	<div>
+		<a href="/actor">Actors</a>
+		<a href="/director">Directors</a>
+		<a href="/pelicula">Films</a>
+	</div>
 </body>
 </html>
