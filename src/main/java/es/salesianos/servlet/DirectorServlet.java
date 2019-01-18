@@ -12,7 +12,7 @@ import es.salesianos.model.Actor;
 import es.salesianos.service.Service;
 import es.salesianos.service.Service;
 
-public class Directorservlet extends HttpServlet {
+public class DirectorServlet extends HttpServlet {
 
 
 	private static final long serialVersionUID = 1L;

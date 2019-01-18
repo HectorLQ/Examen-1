@@ -5,13 +5,13 @@ import java.util.List;
 public class Director extends BaseEntity{
 	
 	private String nombre;
-	private List<Pelicula> films; 
+	private List<Film> films; 
 
-	public List<Pelicula> getFilms() {
+	public List<Film> getFilms() {
 		return films;
 	}
 
-	public void setFilms(List<Pelicula> films) {
+	public void setFilms(List<Film> films) {
 		this.films = films;
 	}
 
