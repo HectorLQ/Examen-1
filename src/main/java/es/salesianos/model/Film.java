@@ -4,6 +4,7 @@ public class Film extends BaseEntity{
 
 	private String title;
 	private Integer codDirector;
+	
 	public Integer getCodDirector() {
 		return codDirector;
 	}

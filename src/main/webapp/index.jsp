@@ -8,9 +8,9 @@
 </head>
 <body>
 	<div>
-		<a href="/actor">Actors</a>
-		<a href="/director">Directors</a>
-		<a href="/pelicula">Films</a>
+		<a href="/actor">Show Actors</a>
+		<a href="/director">Show Directors</a>
+		<a href="/film">Show Films</a>
 	</div>
 </body>
 </html>

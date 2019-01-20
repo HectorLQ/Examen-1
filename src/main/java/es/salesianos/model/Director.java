@@ -1,26 +1,15 @@
 package es.salesianos.model;
 
-import java.util.List;
-
 public class Director extends BaseEntity{
 	
-	private String nombre;
-	private List<Film> films; 
+	private String name;
 
-	public List<Film> getFilms() {
-		return films;
+	public String getName() {
+		return name;
 	}
 
-	public void setFilms(List<Film> films) {
-		this.films = films;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setName(String nombre) {
+		this.name = nombre;
 	}
 
 }

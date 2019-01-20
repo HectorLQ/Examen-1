@@ -8,23 +8,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.salesianos.service.Service;
+import es.salesianos.assembler.ActorAssembler;
+import es.salesianos.model.Actor;
+import es.salesianos.service.ActorService;
 
 public class ActorServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private Service service = new Service();
+	private ActorService service = new ActorService();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// Actor actor = ActorAssembler.assembleActorFrom(req);
-		// service.insert(actor);
+		Actor actor = ActorAssembler.assembleActorFrom(req);
+		service.insert(actor);
 		doAction(req, resp);
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String cod = req.getParameter("cod");
+		if (cod != null) {
+			service.delete(cod);
+		}
 		doAction(req, resp);
 	}
 
