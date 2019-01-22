@@ -20,5 +20,9 @@ public class DirectorService {
 	public void delete(Director director) {
 		repositoryD.delete(director);
 	}
+	
+	public Director filterDirectors(String name) {
+		return repositoryD.filterDirectors(name);
+	}
 
 }

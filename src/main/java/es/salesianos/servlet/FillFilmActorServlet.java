@@ -9,42 +9,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.salesianos.assembler.FilmAssembler;
-import es.salesianos.model.Film;
-import es.salesianos.service.FilmService;
+import es.salesianos.assembler.FilmActorAssembler;
+import es.salesianos.model.FilmActor;
+import es.salesianos.service.FilmActorService;
 
-public class FilmServlet extends HttpServlet {
+public class FillFilmActorServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private FilmService service = new FilmService();
+	private FilmActorService service = new FilmActorService();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Film film = FilmAssembler.assembleFilmFromReq(req);
-		service.insert(film);
+		FilmActor filmActor = FilmActorAssembler.assembleFilmActorFromReq(req);
+		service.insert(filmActor);
 		doAction(req, resp);
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String codString = req.getParameter("cod");
-
-		if (null != codString) {
-			Film film = FilmAssembler.assembleFilmFromReq(req);
-			service.delete(film);
-		}
+		String codActor = req.getParameter("codActor");
+		String codFilm = req.getParameter("codFilm");
+		req.setAttribute("codActor", codActor);
+		req.setAttribute("codFilm", codFilm);
 		doAction(req, resp);
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		List<Film> selectAllFilms = service.selectAllFilms();
-		req.setAttribute("listAllFilms", selectAllFilms);
 		redirect(req, resp);
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/film.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/fillFilmActor.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

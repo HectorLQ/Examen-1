@@ -6,7 +6,7 @@ import es.salesianos.model.Actor;
 
 public class ActorAssembler {
 	
-	public static Actor assembleActorFrom(HttpServletRequest req) {
+	public static Actor assembleActorFromReq(HttpServletRequest req) {
 		Actor actor = new Actor();
 		String name = req.getParameter("name");
 		actor.setName(name);

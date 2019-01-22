@@ -20,7 +20,7 @@ public class ActorServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Actor actor = ActorAssembler.assembleActorFrom(req);
+		Actor actor = ActorAssembler.assembleActorFromReq(req);
 		service.insert(actor);
 		doAction(req, resp);
 	}

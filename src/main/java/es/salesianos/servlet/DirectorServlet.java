@@ -25,7 +25,7 @@ public class DirectorServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Director director = DirectorAssembler.assembleDirectorFrom(req);
+		Director director = DirectorAssembler.assembleDirectorFromReq(req);
 		service.insert(director);
 		doAction(req, resp);
 	}
@@ -35,7 +35,7 @@ public class DirectorServlet extends HttpServlet {
 		String codString = req.getParameter("cod");
 
 		if (null != codString) {
-			Director director = DirectorAssembler.assembleDirectorFrom(req);
+			Director director = DirectorAssembler.assembleDirectorFromReq(req);
 			service.delete(director);
 		}
 		doAction(req, resp);

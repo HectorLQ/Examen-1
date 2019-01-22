@@ -6,7 +6,7 @@ import es.salesianos.model.Director;
 
 public class DirectorAssembler {
 	
-	public static Director assembleDirectorFrom(HttpServletRequest req) {
+	public static Director assembleDirectorFromReq(HttpServletRequest req) {
 		Director director = new Director();
 		String name = req.getParameter("name");
 		director.setName(name);

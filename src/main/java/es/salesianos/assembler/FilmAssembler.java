@@ -6,7 +6,7 @@ import es.salesianos.model.Film;
 
 public class FilmAssembler {
 
-	public static Film assembleFilmFrom(HttpServletRequest req) {
+	public static Film assembleFilmFromReq(HttpServletRequest req) {
 		Film film = new Film();
 		String title = req.getParameter("title");
 		String codString = req.getParameter("cod");

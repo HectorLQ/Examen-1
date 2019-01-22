@@ -13,7 +13,7 @@ import es.salesianos.assembler.FilmAssembler;
 import es.salesianos.model.Film;
 import es.salesianos.service.FilmService;
 
-public class FilmServlet extends HttpServlet {
+public class FilmActorServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -29,7 +29,6 @@ public class FilmServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String codString = req.getParameter("cod");
-
 		if (null != codString) {
 			Film film = FilmAssembler.assembleFilmFromReq(req);
 			service.delete(film);

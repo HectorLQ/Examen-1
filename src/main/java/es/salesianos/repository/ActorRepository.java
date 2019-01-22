@@ -12,10 +12,10 @@ import es.salesianos.connection.H2Connection;
 import es.salesianos.model.Actor;
 
 public class ActorRepository {
-	
+
 	private static final String jdbcUrl = "jdbc:h2:file:./src/main/resources/test";
 	AbstractConnection manager = new H2Connection();
-	
+
 	public void insert(Actor actor) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
@@ -35,7 +35,7 @@ public class ActorRepository {
 		}
 
 	}
-	
+
 	public void delete(Actor actor) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
@@ -52,7 +52,7 @@ public class ActorRepository {
 		}
 
 	}
-	
+
 	public List<Actor> selectAllActors() {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
@@ -78,5 +78,30 @@ public class ActorRepository {
 		return list;
 	}
 
+	public List<Actor> filterAllActors(int beginDt, int endDt) {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		List<Actor> actorList = new ArrayList<Actor>();
+		try {
+			preparedStatement = conn.prepareStatement("SELECT * FROM ACTOR WHERE yearOfBirthDate BETWEEN (?) AND (?)");
+			preparedStatement.setInt(1, beginDt);
+			preparedStatement.setInt(2, endDt);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Actor actorfromDataBase = new Actor();
+				actorfromDataBase.setCod(resultSet.getInt(1));
+				actorfromDataBase.setName(resultSet.getNString(2));
+				actorfromDataBase.setYear(resultSet.getInt(3));
+				actorList.add(actorfromDataBase);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			manager.close(preparedStatement);
+			manager.close(conn);
+		}
+		return actorList;
+	}
 
 }

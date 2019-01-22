@@ -11,6 +11,8 @@
 		<a href="/actor">Show Actors</a>
 		<a href="/director">Show Directors</a>
 		<a href="/film">Show Films</a>
+		<a href="/filmActor">Actor-Film Relation</a>
+		
 	</div>
 </body>
 </html>
