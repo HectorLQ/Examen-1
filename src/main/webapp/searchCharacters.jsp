@@ -16,9 +16,9 @@
 		DtoActorFilm selectFilmActor = (DtoActorFilm) request.getAttribute("selectFilmActor");
 	%>
 
-	<form action="/searchRole" method="post">
-		<span>Search by role: <input type="text" name="role"></span> <br />
-		<input type="submit">
+	<form action="/searchCharacters" method="post">
+		<span>Search by Character: <input type="text" name="role"></span> <br />
+		<input type="submit" value="Submit">
 	</form>
 	<br />
 	<br />
@@ -27,8 +27,8 @@
 		<thead>
 			<tr>
 				<td>Film</td>
-				<td>Actor's Name</td>
-				<td>Bithdate</td>
+				<td>Name</td>
+				<td>Birthdate</td>
 			</tr>
 		</thead>
 		<tbody>

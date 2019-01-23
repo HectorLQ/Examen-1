@@ -18,14 +18,10 @@
 	%>
 
 	<form action="/actor" method="post">
-		<span>name:</span> <input type="text" name="name"> <br /> <span>year:</span>
-		<input type="text" name="year"> <br /> <input type="submit">
+		<span>Name:</span> <input type="text" name="name"> <br /> <span>Year Of Birth:</span>
+		<input type="text" name="year"> <br /> <input type="submit" value="Submit">
 	</form>
 
-	<form action="/actor" method="get">
-		<span>From:</span> <input type="text" name="beginDate"> <span>To:</span>
-		<input type="text" name="endDate"> <input type="submit">
-	</form>
 	<br />
 	<br />
 	<table border="1">
@@ -48,6 +44,11 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<br>
+	<form action="/actor" method="get">
+		<span>Years From:</span> <input type="text" name="beginDt"> <span>To:</span>
+		<input type="text" name="endDt"> <input type="submit" value="Submit">
+	</form>
 	<br>
 	<div>
 		<a href="index.jsp">Return index</a>

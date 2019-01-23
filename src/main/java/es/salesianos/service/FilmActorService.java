@@ -8,8 +8,8 @@ public class FilmActorService {
 
 	FilmActorRepository repositoryFA = new FilmActorRepository();
 
-	public DtoActorFilm filterAllFilmActors(String role) {
-		return repositoryFA.filterAllFilmActors(role);
+	public DtoActorFilm filterFilmActors(String role) {
+		return repositoryFA.filterFilmActors(role);
 	}
 
 	public void insert(FilmActor filmActor) {

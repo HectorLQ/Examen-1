@@ -26,5 +26,8 @@ public class ActorService {
 
 	}
 
+	public List<Actor> filterAllActors(int beginDt, int endDt) {
+		return repositoryA.filterAllActors(beginDt, endDt);
+	}
 
 }

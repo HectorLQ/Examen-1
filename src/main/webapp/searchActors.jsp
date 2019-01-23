@@ -13,25 +13,24 @@
 <body>
 
 	<%
-		Director listFilterDirector = (Director) request.getAttribute("listFilterDirector");
+		Director listFilterDirectors = (Director) request.getAttribute("listFilterDirectors");
 	%>
 
-	<form action="/searchActor" method="post">
-		<span>Search Actor: <input type="text" name="name"></span> <br />
-		<input type="submit">
+	<form action="/searchActors" method="post">
+		<span>Search Actor/Actress:<input type="text" name="name"></span> <br />
+		<input type="submit" value="Submit">
 	</form>
-	<br />
 	<br />
 
 	<table border="1">
 		<thead>
 			<tr>
-				<td>Director</td>
+				<td>Director:</td>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<c:forEach var="name" items="${listFilterDirector.name}">
+				<c:forEach var="name" items="${listFilterDirectors.name}">
 					<tr>
 						<td><c:out value="${name}" /></td>
 					</tr>

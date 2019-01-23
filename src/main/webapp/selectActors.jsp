@@ -21,8 +21,8 @@
 		<thead>
 			<tr>
 				<td>Cod Actor</td>
-				<td>name</td>
-				<td>year</td>
+				<td>Name</td>
+				<td>Year</td>
 				<td>Select</td>
 			</tr>
 		</thead>
@@ -33,8 +33,8 @@
 					<td><c:out value="${actor.name}" /></td>
 					<td><c:out value="${actor.year}" /></td>
 					<td><a
-						href="/fillFilmActor?codActor=${actor.cod}&codFilm=${codFilm}">Select
-							Actor</a></td>
+						href="/fillFilmActor?codActor=${actor.cod}&codFilm=${codFilm}">Choose
+							Actor/Actress</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

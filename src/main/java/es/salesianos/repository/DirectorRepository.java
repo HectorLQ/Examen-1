@@ -20,9 +20,8 @@ public class DirectorRepository {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {
-			preparedStatement = conn.prepareStatement("INSERT INTO DIRECTOR (cod, name)" + "VALUES (?, ?)");
-			preparedStatement.setInt(1, director.getCod());
-			preparedStatement.setString(2, director.getName());
+			preparedStatement = conn.prepareStatement("INSERT INTO DIRECTOR (name)" + "VALUES (?)");
+			preparedStatement.setString(1, director.getName());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -31,15 +30,14 @@ public class DirectorRepository {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 	
-	public void delete(Director actor) {
+	public void delete(Director director) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn.prepareStatement("DELETE FROM DIRECTOR WHERE cod=?");
-			preparedStatement.setInt(1, actor.getCod());
+			preparedStatement.setInt(1, director.getCod());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -48,7 +46,6 @@ public class DirectorRepository {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 	
 	public List<Director> selectAllDirectors() {
@@ -60,8 +57,8 @@ public class DirectorRepository {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				Director director = new Director();
-				director.setCod(resultSet.getInt(0));
-				director.setName(resultSet.getNString(0));
+				director.setCod(resultSet.getInt(1));
+				director.setName(resultSet.getNString(2));
 				list.add(director);
 			}
 

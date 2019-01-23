@@ -29,7 +29,7 @@
 				<tr>
 					<td><c:out value="${film.cod}" /></td>
 					<td><c:out value="${film.title}" /></td>
-					<td><a href="/recoveryFilm?cod=${film.cod}">Merge</a></td>
+					<td><a href="/linkFilm?cod=${film.cod}">Merge</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

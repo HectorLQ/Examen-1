@@ -13,10 +13,10 @@
 </head>
 <body>
 	<form action="/director" method="post">
-		<span>name:</span> <input type="text" name="name"> <br /> <input
-			type="submit">
+		<span>Name:</span> <input type="text" name="name"> <br /> <input
+			type="submit" value="Submit">
 	</form>
-
+	<br>
 	<table border="1">
 		<thead>
 			<tr>
@@ -40,7 +40,5 @@
 	<div>
 		<a href="index.jsp">Return index</a>
 	</div>	
-</body>
-</html>
 </body>
 </html>

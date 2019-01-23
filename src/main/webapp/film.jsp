@@ -17,7 +17,7 @@
 	%>
 	<form action="/film" method="post">
 		<span>title:</span> <input type="text" name="title"> <br /> <input
-			type="submit">
+			type="submit" value="Submit">
 	</form>
 
 	<table border="1">

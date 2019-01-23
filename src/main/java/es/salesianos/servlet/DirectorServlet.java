@@ -10,10 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.assembler.DirectorAssembler;
-import es.salesianos.assembler.FilmAssembler;
-import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
-import es.salesianos.model.Film;
 import es.salesianos.service.DirectorService;
 
 public class DirectorServlet extends HttpServlet {
@@ -32,11 +29,9 @@ public class DirectorServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String codString = req.getParameter("cod");
-
-		if (null != codString) {
-			Director director = DirectorAssembler.assembleDirectorFromReq(req);
-			service.delete(director);
+		String cod = req.getParameter("cod");
+		if (null != cod) {
+			service.delete(cod);
 		}
 		doAction(req, resp);
 	}

@@ -18,8 +18,12 @@
 
 	<form action="/fillFilmActor?codFilm=${codFilm}&codActor=${codActor}"
 		method="post">
-		<span>Cache:</span> <input type="text" name="cache"> <br /> <span>Character:</span>
-		<input type="text" name="character"> <br /> <input type="submit">
+		<span>Character:</span><input type="text" name="character"> <br />
+		<span>Cache:</span> <input type="text" name="cache"> <br />
+		<input type="submit" value="Submit">
 	</form>
+	<div>
+		<a href="index.jsp">Return index</a>
+	</div>
 </body>
 </html>

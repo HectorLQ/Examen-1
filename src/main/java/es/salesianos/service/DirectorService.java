@@ -17,7 +17,10 @@ public class DirectorService {
 		repositoryD.insert(director);
 	}
 	
-	public void delete(Director director) {
+	public void delete(String codString) {
+		Director director = new Director();
+		int cod = Integer.parseInt(codString);
+		director.setCod(cod);
 		repositoryD.delete(director);
 	}
 	

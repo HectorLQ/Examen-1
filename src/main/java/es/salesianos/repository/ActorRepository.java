@@ -20,10 +20,8 @@ public class ActorRepository {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {
-			preparedStatement = conn
-					.prepareStatement("INSERT INTO ACTOR (cod,name,yearOfBirthDate)" + "VALUES (?, ?, ?)");
-			preparedStatement.setInt(1, actor.getCod());
-			preparedStatement.setString(2, actor.getName());
+			preparedStatement = conn.prepareStatement("INSERT INTO ACTOR (name,yearOfBirthDate)" + "VALUES (?, ?)");
+			preparedStatement.setString(1, actor.getName());
 			preparedStatement.setInt(2, actor.getYear());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -33,7 +31,6 @@ public class ActorRepository {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 
 	public void delete(Actor actor) {
@@ -50,22 +47,21 @@ public class ActorRepository {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 
 	public List<Actor> selectAllActors() {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
-		List<Actor> list = new ArrayList<Actor>();
+		List<Actor> listActor = new ArrayList<Actor>();
 		try {
 			preparedStatement = conn.prepareStatement("SELECT * FROM ACTOR");
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				Actor actor = new Actor();
-				actor.setCod(resultSet.getInt(0));
-				actor.setName(resultSet.getNString(0));
-				actor.setYear(resultSet.getInt(2));
-				list.add(actor);
+				Actor actorfromDataBase = new Actor();
+				actorfromDataBase.setCod(resultSet.getInt(1));
+				actorfromDataBase.setName(resultSet.getNString(2));
+				actorfromDataBase.setYear(resultSet.getInt(3));
+				listActor.add(actorfromDataBase);
 			}
 
 		} catch (SQLException e) {
@@ -75,7 +71,7 @@ public class ActorRepository {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-		return list;
+		return listActor;
 	}
 
 	public List<Actor> filterAllActors(int beginDt, int endDt) {
