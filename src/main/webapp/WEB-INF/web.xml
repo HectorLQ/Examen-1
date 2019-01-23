@@ -15,6 +15,28 @@
 		<servlet-name>DirectorServlet</servlet-name>
 		<servlet-class>es.salesianos.servlet.DirectorServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>FilmActorServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.FilmActorServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FillFilmActorServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.FillFilmActorServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LinkFilmServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.LinkFilmServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SearchActorServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.SearchActorServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SearchCharacterServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.SearchCharacterServlet</servlet-class>
+	</servlet>
+	
+	
 
 	<servlet-mapping>
 		<servlet-name>ActorServlet</servlet-name>
@@ -30,6 +52,33 @@
 		<servlet-name>DirectorServlet</servlet-name>
 		<url-pattern>/director</url-pattern>
 	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>FilmActorServlet</servlet-name>
+		<url-pattern>/filmActor</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>FillFilmActorServlet</servlet-name>
+		<url-pattern>/fillFilmActor</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>LinkFilmServlet</servlet-name>
+		<url-pattern>/linkFilm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SearchActorServlet</servlet-name>
+		<url-pattern>/searchActors</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SearchCharacterServlet</servlet-name>
+		<url-pattern>/searchCharacters</url-pattern>
+	</servlet-mapping>
+	
+	
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

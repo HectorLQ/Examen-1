@@ -8,7 +8,7 @@ public class FilmActorService {
 
 	FilmActorRepository repositoryFA = new FilmActorRepository();
 
-	public DtoActorFilm filterAllFilmActor(String role) {
+	public DtoActorFilm filterAllFilmActors(String role) {
 		return repositoryFA.filterAllFilmActors(role);
 	}
 

@@ -13,30 +13,30 @@
 <body>
 
 	<%
-		List<Actor> listAllActors = (List<Actor>) request.getAttribute("listAllActors");
-		request.getAttribute("codFilm");
+		DtoActorFilm selectFilmActor = (DtoActorFilm) request.getAttribute("selectFilmActor");
 	%>
+
+	<form action="/searchRole" method="post">
+		<span>Search by role: <input type="text" name="role"></span> <br />
+		<input type="submit">
+	</form>
+	<br />
+	<br />
 
 	<table border="1">
 		<thead>
 			<tr>
-				<td>Cod Actor</td>
-				<td>name</td>
-				<td>year</td>
-				<td>Select</td>
+				<td>Film</td>
+				<td>Actor's Name</td>
+				<td>Bithdate</td>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="actor" items="${listAllActors}">
-				<tr>
-					<td><c:out value="${actor.cod}" /></td>
-					<td><c:out value="${actor.name}" /></td>
-					<td><c:out value="${actor.year}" /></td>
-					<td><a
-						href="/fillFilmActor?codActor=${actor.cod}&codFilm=${codFilm}">Select
-							Actor</a></td>
-				</tr>
-			</c:forEach>
+			<tr>
+				<td><c:out value="${selectFilmActor.title}" /></td>
+				<td><c:out value="${selectFilmActor.name}" /></td>
+				<td><c:out value="${selectFilmActor.year}" /></td>
+			</tr>
 		</tbody>
 	</table>
 	<div>

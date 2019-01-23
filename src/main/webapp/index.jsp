@@ -12,7 +12,8 @@
 		<a href="/director">Show Directors</a>
 		<a href="/film">Show Films</a>
 		<a href="/filmActor">Actor-Film Relation</a>
-		
+		<a href="/searchRoles">Search by Character</a><br/>
+		<a href="/searchActors">Search by Actor</a><br/>		
 	</div>
 </body>
 </html>
