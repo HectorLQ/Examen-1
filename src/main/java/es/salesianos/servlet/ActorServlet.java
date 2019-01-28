@@ -46,7 +46,6 @@ public class ActorServlet extends HttpServlet {
 		List<Actor> listAllActors = service.selectAllActors();
 		req.setAttribute("listAllActors", listAllActors);
 		redirect(req, resp);
-		redirect(req, resp);
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {

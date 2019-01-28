@@ -10,9 +10,9 @@ public class DirectorAssembler {
 		Director director = new Director();
 		String name = req.getParameter("name");
 		director.setName(name);
-		String codString = req.getParameter("cod");
-		if (null != codString) {
-			director.setCod(Integer.parseInt(codString));
+		String codDirector = req.getParameter("cod");
+		if (null != codDirector) {
+			director.setCod(Integer.parseInt(codDirector));
 		}
 		return director;
 	}

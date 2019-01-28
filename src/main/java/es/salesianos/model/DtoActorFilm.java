@@ -1,6 +1,6 @@
 package es.salesianos.model;
 
-public class DtoActorFilm extends BaseEntity {
+public class DtoActorFilm extends BaseEntity{
 
 	private int year;
 	private String name;

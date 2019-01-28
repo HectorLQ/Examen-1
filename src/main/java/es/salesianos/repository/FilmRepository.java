@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
 import es.salesianos.model.Film;
@@ -14,6 +17,7 @@ import es.salesianos.model.Film;
 public class FilmRepository {
 	
 	private static final String jdbcUrl = "jdbc:h2:file:./src/main/resources/test";
+	private static final Logger log = LogManager.getLogger(ActorRepository.class);
 	AbstractConnection manager = new H2Connection();
 	
 	public void insert(Film film) {
@@ -24,7 +28,7 @@ public class FilmRepository {
 			preparedStatement.setString(1, film.getTitle());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			log.error(e);
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
@@ -41,7 +45,7 @@ public class FilmRepository {
 			preparedStatement.setInt(1, film.getCod());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			log.error(e);
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
@@ -66,7 +70,7 @@ public class FilmRepository {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			log.error(e);
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
