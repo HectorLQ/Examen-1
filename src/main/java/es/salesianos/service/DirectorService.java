@@ -7,25 +7,25 @@ import es.salesianos.repository.DirectorRepository;
 
 public class DirectorService {
 
-	private DirectorRepository repositoryD = new DirectorRepository();
+	private DirectorRepository directorRepository = new DirectorRepository();
 	
 	public List<Director> selectAllDirectors() {
-		return repositoryD.selectAllDirectors();
+		return directorRepository.selectAllDirectors();
 	}
 	
 	public void insert(Director director) {
-		repositoryD.insert(director);
+		directorRepository.insert(director);
 	}
 	
 	public void delete(String codString) {
 		Director director = new Director();
 		int cod = Integer.parseInt(codString);
 		director.setCod(cod);
-		repositoryD.delete(director);
+		directorRepository.delete(director);
 	}
 	
 	public Director filterDirectors(String name) {
-		return repositoryD.filterDirectors(name);
+		return directorRepository.filterDirectors(name);
 	}
 
 }

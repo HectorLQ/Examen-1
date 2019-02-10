@@ -6,13 +6,13 @@ import es.salesianos.repository.FilmActorRepository;
 
 public class FilmActorService {
 
-	FilmActorRepository repositoryFA = new FilmActorRepository();
+	FilmActorRepository filmactorRepository = new FilmActorRepository();
 
 	public DtoActorFilm filterFilmActors(String role) {
-		return repositoryFA.filterFilmActors(role);
+		return filmactorRepository.filterFilmActors(role);
 	}
 
 	public void insert(FilmActor filmActor) {
-		repositoryFA.insert(filmActor);
+		filmactorRepository.insert(filmActor);
 	}
 }

@@ -7,14 +7,14 @@ import es.salesianos.repository.ActorRepository;
 
 public class ActorService {
 	
-	private ActorRepository repositoryA = new ActorRepository();
+	private ActorRepository actorRepository = new ActorRepository();
 	
 	public List<Actor> selectAllActors() {
-		return repositoryA.selectAllActors();
+		return actorRepository.selectAllActors();
 	}
 	
 	public void insert(Actor actor) {
-		repositoryA.insert(actor);
+		actorRepository.insert(actor);
 
 	}
 	
@@ -22,12 +22,12 @@ public class ActorService {
 		Actor actor = new Actor();
 		int cod = Integer.parseInt(codString);
 		actor.setCod(cod);
-		repositoryA.delete(actor);
+		actorRepository.delete(actor);
 
 	}
 
 	public List<Actor> filterAllActors(int beginDt, int endDt) {
-		return repositoryA.filterAllActors(beginDt, endDt);
+		return actorRepository.filterAllActors(beginDt, endDt);
 	}
 
 }

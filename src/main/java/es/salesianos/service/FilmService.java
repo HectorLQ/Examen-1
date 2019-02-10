@@ -7,14 +7,14 @@ import es.salesianos.repository.FilmRepository;
 
 public class FilmService {
 
-	private FilmRepository repositoryF = new FilmRepository();
+	private FilmRepository filmRepository = new FilmRepository();
 
 	public List<Film> selectAllFilms() {
-		return repositoryF.selectAllFilms();
+		return filmRepository.selectAllFilms();
 	}
 
 	public void insert(Film film) {
-		repositoryF.insert(film);
+		filmRepository.insert(film);
 
 	}
 
@@ -22,6 +22,6 @@ public class FilmService {
 		Film film = new Film();
 		int cod = Integer.parseInt(codString);
 		film.setCod(cod);
-		repositoryF.delete(film);
+		filmRepository.delete(film);
 	}
 }
