@@ -1,4 +1,4 @@
-package es.salesianos.Examen;
+package es.salesianos.Application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

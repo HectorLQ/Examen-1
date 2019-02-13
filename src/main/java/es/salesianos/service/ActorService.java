@@ -2,9 +2,12 @@ package es.salesianos.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import es.salesianos.model.Actor;
 import es.salesianos.repository.ActorRepository;
 
+@Service
 public class ActorService {
 	
 	private ActorRepository actorRepository = new ActorRepository();
