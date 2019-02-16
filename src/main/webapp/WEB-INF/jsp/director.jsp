@@ -9,38 +9,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Director page</title>
 </head>
 <body>
-
-	<%
-		DtoActorFilm selectFilmActor = (DtoActorFilm) request.getAttribute("selectFilmActor");
-	%>
-
-	<form action="/searchCharacters" method="post">
-		<span>Search by Character: <input type="text" name="role"></span> <br />
-		<input type="submit" value="Submit">
+	<form action="/insertDirector" method="post">
+		<span>Name:</span> <input type="text" name="name"> <br /> <input
+			type="submit" value="Submit">
 	</form>
-	<br />
-	<br />
-
+	<br>
 	<table border="1">
 		<thead>
 			<tr>
-				<td>Film</td>
-				<td>Name</td>
-				<td>Birthdate</td>
+				<td>Cod</td>
+				<td>Title</td>
+				<td>Cod Director</td>
+				<td>Delete</td>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td><c:out value="${selectFilmActor.title}" /></td>
-				<td><c:out value="${selectFilmActor.name}" /></td>
-				<td><c:out value="${selectFilmActor.year}" /></td>
-			</tr>
+			<c:forEach var="director" items="${listAllDirectors}">
+				<tr>
+					<td><c:out value="${director.cod}" /></td>
+					<td><c:out value="${director.name}" /></td>
+					<td><a href="/deleteDirector?cod=${director.cod}">Delete</a></td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
+	<br>
 	<div>
 		<a href="index.jsp">Return index</a>
-	</div>
+	</div>	
 </body>
 </html>

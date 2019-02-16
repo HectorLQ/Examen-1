@@ -13,31 +13,28 @@
 <body>
 
 	<%
-		Director listFilterDirectors = (Director) request.getAttribute("listFilterDirectors");
+		List<Film> listAllFilms = (List<Film>) request.getAttribute("listAllFilms");
 	%>
-
-	<form action="/searchActors" method="post">
-		<span>Search Actor/Actress:<input type="text" name="name"></span> <br />
-		<input type="submit" value="Submit">
-	</form>
-	<br />
 
 	<table border="1">
 		<thead>
 			<tr>
-				<td>Director:</td>
+				<td>Cod</td>
+				<td>Title</td>
+				<td>Merge Actor</td>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<c:forEach var="name" items="${listFilterDirectors.name}">
-					<tr>
-						<td><c:out value="${name}" /></td>
-					</tr>
-				</c:forEach>
-			</tr>
+			<c:forEach var="film" items="${listAllFilms}">
+				<tr>
+					<td><c:out value="${film.cod}" /></td>
+					<td><c:out value="${film.title}" /></td>
+					<td><a href="/recoveryFilm?cod=${film.cod}">Merge</a></td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
+	<br>
 	<div>
 		<a href="index.jsp">Return index</a>
 	</div>

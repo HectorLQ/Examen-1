@@ -16,7 +16,7 @@
 		request.getAttribute("codActor");
 	%>
 
-	<form action="/fillFilmActor?codFilm=${codFilm}&codActor=${codActor}"
+	<form action="/insertFilmActor?codFilm=${codFilm}&codActor=${codActor}"
 		method="post">
 		<span>Character:</span><input type="text" name="character"> <br />
 		<span>Cache:</span> <input type="text" name="cache"> <br />
