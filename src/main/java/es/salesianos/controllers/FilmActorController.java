@@ -45,7 +45,7 @@ public class FilmActorController {
 	}
 
 
-	@GetMapping(path = "/searchCharacter")
+	@GetMapping(path = "/searchCharacters")
 	public String getPagesearchCharacter() {
 		return "searchCharacters";
 	}

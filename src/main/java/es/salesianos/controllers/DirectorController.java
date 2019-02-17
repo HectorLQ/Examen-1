@@ -48,7 +48,7 @@ public class DirectorController {
 
 	@GetMapping(path = "/searchActor")
 	public String getsearchActor() {
-		return "searchActors";
+		return "searchActor";
 	}
 
 }
